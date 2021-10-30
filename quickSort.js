@@ -66,4 +66,3 @@ function quickSort(items, left, right) {
 }
 
 quickSort(items, 0, items.length - 1)
-console.log(items)
