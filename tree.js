@@ -19,7 +19,6 @@ class Tree {
   }
 
   findBFS(data) {
-    // const queue = [this.root]
     let _node = null
 
     this.traverseBFS((node) => {
@@ -32,9 +31,9 @@ class Tree {
   }
 
   traverseBFS(cb) {
-    if (!cb) return 
+    if (!cb) return null
     const queue = [this.root]
-  
+
     while (queue.length) {
       const node = queue.shift()
       cb(node)
@@ -47,13 +46,13 @@ class Tree {
 } 
 
 
-(function test() {
-  const tree = new Tree()
-  tree.add('Node1')
-  tree.add('Node2', 'Node1')
-  tree.add('Node3', 'Node2')
+// (function test() {
+//   const tree = new Tree()
+//   tree.add('Node1')
+//   tree.add('Node2', 'Node1')
+//   tree.add('Node3', 'Node2')
 
-  tree.traverseBFS((node) => console.log(`Current node ${node.data}`))
+//   tree.traverseBFS((node) => console.log(`Current node ${node.data}`))
 
-  console.log(tree)
-})()
+//   console.log(tree)
+// })()
