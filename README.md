@@ -1,1 +1,1 @@
-Data structures and algorithms implemented in JavaScript
+Data structures and algorithms implementation in JavaScript
