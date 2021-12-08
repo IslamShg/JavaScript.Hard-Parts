@@ -1,3 +1,4 @@
+//* simple iterator
 const createFC = (arr) => {
   let i = 0
   return () => {
@@ -6,13 +7,9 @@ const createFC = (arr) => {
     return element
   }
 }
-
 const returnNextEl = createFC([1, 2, 3, 4])
-const returnNextEl2 = createFC([1, 2, 3, 4])
 
-// console.log(returnNextEl2())
-
-// make non iterable object iterable
+//* analog of built-in iterator
 const personProps = {
   name: "Islam",
   surname: "Shagaev",
@@ -34,6 +31,17 @@ const personProps = {
   },
 }
 
+//* object is iterable now
 for (let prop of personProps) {
-  console.log(prop)
+  console.log('Object Value: ', prop)
 }
+
+//* calling built-in iterator 
+const name = "Islam"
+const iterator = name[Symbol.iterator]()
+//* returns { value, done } object
+console.log(iterator.next())
+console.log(iterator.next())
+console.log(iterator.next())
+console.log(iterator.next())
+console.log(iterator.next())
