@@ -20,12 +20,10 @@ const personProps = {
     let i = 0
     return {
       next() {
-        if (i < keys.length) {
-          const returnObj = { value: thisVal[keys[i]], done: false }
-          i++
-          return returnObj
-        }
-        return { done: true }
+        if (i === keys.length) return { done: true }
+        const returnObj = { value: thisVal[keys[i]], done: false }
+        i++
+        return returnObj
       },
     }
   },
@@ -33,10 +31,10 @@ const personProps = {
 
 //* object is iterable now
 for (let prop of personProps) {
-  console.log('Object Value: ', prop)
+  console.log("Object Value: ", prop)
 }
 
-//* calling built-in iterator 
+//* calling built-in iterator
 const name = "Islam"
 const iterator = name[Symbol.iterator]()
 //* returns { value, done } object
